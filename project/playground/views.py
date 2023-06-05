@@ -44,3 +44,16 @@ def test_html_for_page(request):
             }]
         }
     return render(request, "playground/for_loop.html", context)
+
+def home_page(request):
+    context = {
+        "page_data" : "Home Page"
+    }
+    return render(request, "playground/raw_page.html", context)
+
+def about_page(request):
+    print(request.GET)
+    context = {
+        "page_data" : "About Page"
+    }
+    return render(request, "playground/raw_page.html", context)
